@@ -1,0 +1,10 @@
+body{
+    font-family: "Comfortaa", sans-serif;
+    background-color: #f2f1f0;
+}
+
+.title{
+    text-align: center;
+    margin-top: 25px;
+    font-size: 72px;
+}
