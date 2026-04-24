@@ -2,7 +2,7 @@ const slider = document.getElementById("range");
 const output = document.getElementById("output");
 const container = document.querySelector(".grid-container");
 
-slider.oninput = function () {
+function gridBuild() {
     const size = slider.value;
     output.textContent = `${size} x ${size}`;
 
@@ -16,15 +16,12 @@ slider.oninput = function () {
         const square = document.createElement("div");
         square.style.border = "1px solid black";
         container.appendChild(square);
-    }
-};
+         square.addEventListener("mouseover", function() {
+        square.style.backgroundColor = colorval.value
+    })
+    }   
+}
 
-container.style.display = "grid";
-    container.style.gridTemplateColumns = `repeat(16, 1fr)`;
-    container.style.gridTemplateRows = `repeat(16, 1fr)`;
+gridBuild()
 
-    for (let i = 0; i < 256; i++) {
-        const square = document.createElement("div");
-        square.style.border = "1px solid black";
-        container.appendChild(square);
-    }
+slider.oninput = gridBuild
