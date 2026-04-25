@@ -9,4 +9,3 @@ let rainbowb = false
 let colorb = true
 let eraseb = false
 
-

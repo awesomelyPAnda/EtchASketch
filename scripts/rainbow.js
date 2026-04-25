@@ -3,4 +3,7 @@ rainbow.addEventListener("click", () => {
     rainbow.classList.add("active")
     color.classList.remove("active")
     erase.classList.remove("active")
+    rainbowb = true
+    colorb = false
+    eraseb = false
 });

@@ -5,6 +5,32 @@ const econtainer = document.querySelector(".bruh")
 let mousedown = false
 let mouseover = false
 
+
+function getRandomColor() {
+  var letters = '0123456789ABCDEF';
+  var color = '#';
+  for (var i = 0; i < 6; i++) {
+    color += letters[Math.floor(Math.random() * 16)];
+  }
+  return color;
+}
+
+
+function backgroundcolor(){
+    let value
+    if (colorb == true) {
+        value = colorval.value
+    }
+    if (rainbowb == true) {
+        value = getRandomColor()
+    }
+    if (eraseb == true) {
+        value = "#f2f1f0"
+    }
+    return value
+}
+
+
 function gridBuild() {
     const size = slider.value;
     output.textContent = `${size} x ${size}`;
@@ -28,7 +54,7 @@ function gridBuild() {
             mousedown = false
         })
         if(mousedown && mouseover == true){
-            square.style.backgroundColor = colorval.value
+            square.style.backgroundColor = backgroundcolor()
         }
     })
     }   
