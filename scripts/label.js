@@ -1,6 +1,9 @@
 const slider = document.getElementById("range");
 const output = document.getElementById("output");
 const container = document.querySelector(".grid-container");
+const econtainer = document.querySelector(".bruh") 
+let mousedown = false
+let mouseover = false
 
 function gridBuild() {
     const size = slider.value;
@@ -16,8 +19,17 @@ function gridBuild() {
         const square = document.createElement("div");
         square.style.border = "1px solid black";
         container.appendChild(square);
-         square.addEventListener("mouseover", function() {
-        square.style.backgroundColor = colorval.value
+        square.addEventListener("mouseover", function() {
+            mouseover = true
+        square.addEventListener("mousedown", () =>{
+            mousedown = true
+        })
+        econtainer.addEventListener("mouseup", () =>{
+            mousedown = false
+        })
+        if(mousedown && mouseover == true){
+            square.style.backgroundColor = colorval.value
+        }
     })
     }   
 }
