@@ -43,7 +43,6 @@ function gridBuild() {
 
     for (let i = 0; i < size * size; i++) {
         const square = document.createElement("div");
-        square.style.border = "1px solid black";
         container.appendChild(square);
         square.addEventListener("mouseover", function() {
             mouseover = true
